@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HATUA MPYA - Vêtements, Chaussures, Sacs & Plus | RD Congo, Rwanda et Ouganda avec livraison internationale</title>
+    <meta name="description" content="HATUA MPYA - Votre destination pour vêtements, chaussures, sacs, produits d'hygiène et produits Longrich. Service professionnel en RD Congo, Rwanda et Ouganda avec livraison internationale">
+    <meta name="keywords" content="vêtements, chaussures, sacs, hygiène, Longrich, DRC, DR Congo, Rwanda, Uganda, Kampala, Uganda, retail, mode">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Note: Add HOLIMOUNT and HK GROTESK font files to your server and link them here -->
+    <!-- For now using fallback fonts until custom fonts are uploaded -->
+    <style>
+        @font-face {
+            font-family: 'HOLIMOUNT';
+            src: url('fonts/HOLIMOUNT.woff2') format('woff2'),
+                 url('fonts/HOLIMOUNT.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'HK Grotesk';
+            src: url('fonts/HKGrotesk-Regular.woff2') format('woff2'),
+                 url('fonts/HKGrotesk-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #FFFFFF;
+            --orange: #F16102;
+            --light-blue: #D8E8F5;
+            --medium-blue: #91BED5;
+            --dark-blue: #30426A;
+            --holimount: 'HOLIMOUNT', 'Arial Black', sans-serif;
+            --hk-grotesk: 'HK Grotesk', 'Arial', sans-serif;
+        }
+
+        body {
+            font-family: var(--hk-grotesk);
+            line-height: 1.6;
+            color: var(--dark-blue);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--white);
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(48, 66, 106, 0.1);
+            overflow: hidden;
+        }
+
+        .language-toggle button {
+            background: none;
+            border: none;
+            padding: 10px 15px;
+            font-family: var(--hk-grotesk);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--dark-blue);
+        }
+
+        .language-toggle button.active {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        .language-toggle button:hover {
+            background: var(--light-blue);
+        }
+
+        .language-toggle button.active:hover {
+            background: var(--orange);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+            color: var(--white);
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(241, 97, 2, 0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: var(--holimount);
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 4vw, 1.4rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--white);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(241, 97, 2, 0.3);
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(241, 97, 2, 0.4);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: var(--holimount);
+            font-size: clamp(2rem, 6vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark-blue);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--orange);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light-blue);
+        }
+
+        /*.about-content {*/
+        /*    display: grid;*/
+        /*    grid-template-columns: 1fr;*/
+        /*    gap: 40px;*/
+        /*    align-items: center;*/
+        /*}*/
+        
+        .about-content {
+            display: block;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, var(--medium-blue), var(--dark-blue));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(48, 66, 106, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(48, 66, 106, 0.15);
+            border-color: var(--orange);
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: var(--dark-blue);
+        }
+
+        .product-title {
+            font-family: var(--holimount);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+
+        .product-description {
+            color: var(--medium-blue);
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--medium-blue);
+            color: var(--white);
+        }
+
+        .services .section-title {
+            color: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--orange);
+        }
+
+        .service-title {
+            font-family: var(--holimount);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--dark-blue);
+            color: var(--white);
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--orange);
+            margin-bottom: 15px;
+        }
+
+        .contact-title {
+            font-family: var(--holimount);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-details {
+            font-size: 1.1rem;
+        }
+
+        .contact-details a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--orange);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h4 {
+            font-family: var(--holimount);
+            color: var(--orange);
+            margin-bottom: 10px;
+        }
+
+        /* Hidden class for language switching */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+            }
+
+            /*.about-text {*/
+            /*    text-align: left;*/
+            /*}*/
+            
+            .about-text {
+                text-align: center;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .contact-info {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button onclick="switchLanguage('fr')" class="lang-btn active" data-lang="fr">FR</button>
+        <button onclick="switchLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">HATUA MPYA</h1>
+                <p class="hero-subtitle" data-fr="Votre destination complète pour vêtements, chaussures, sacs et bien plus encore" data-en="Your complete destination for clothing, shoes, bags and much more">Votre destination complète pour vêtements, chaussures, sacs et bien plus encore</p>
+                <a href="#contact" class="cta-button" data-fr="Contactez-nous" data-en="Contact Us">Contactez-nous</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title" data-fr="À Propos de Nous" data-en="About Us">À Propos de Nous</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-fr="HATUA MPYA est votre partenaire de confiance pour tous vos besoins en mode et lifestyle. Présents en RD Congo et en Afrique de l'Est, nous offrons une sélection soigneusement choisie de vêtements, chaussures, sacs et produits d'hygiène de qualité. Notre engagement envers l'excellence et le service client nous distingue dans le secteur du retail." data-en="HATUA MPYA is your trusted partner for all your fashion and lifestyle needs. With presence in the DR Congo and in East Africa, we offer a carefully curated selection of quality clothing, shoes, bags, and hygiene products. Our commitment to excellence and customer service sets us apart in the retail sector.">HATUA MPYA est votre partenaire de confiance pour tous vos besoins en mode et lifestyle. Présents en RD Congo et en Afrique de l'Est, nous offrons une sélection soigneusement choisie de vêtements, chaussures, sacs et produits d'hygiène de qualité. Notre engagement envers l'excellence et le service client nous distingue dans le secteur du retail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title" data-fr="Nos Produits" data-en="Our Products">Nos Produits</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">👔</div>
+                    <h3 class="product-title" data-fr="Vêtements" data-en="Clothing">Vêtements</h3>
+                    <p class="product-description" data-fr="Collection variée de vêtements pour hommes et femmes, alliant style et confort pour toutes les occasions." data-en="Diverse collection of clothing for men and women, combining style and comfort for all occasions.">Collection variée de vêtements pour hommes et femmes, alliant style et confort pour toutes les occasions.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">👟</div>
+                    <h3 class="product-title" data-fr="Chaussures" data-en="Shoes">Chaussures</h3>
+                    <p class="product-description" data-fr="Gamme complète de chaussures pour tous les goûts et besoins, du casual au formel." data-en="Complete range of shoes for all tastes and needs, from casual to formal.">Gamme complète de chaussures pour tous les goûts et besoins, du casual au formel.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">👜</div>
+                    <h3 class="product-title" data-fr="Sacs" data-en="Bags">Sacs</h3>
+                    <p class="product-description" data-fr="Sélection élégante de sacs à main, sacs à dos et accessoires pour compléter votre style." data-en="Elegant selection of handbags, backpacks and accessories to complete your style.">Sélection élégante de sacs à main, sacs à dos et accessoires pour compléter votre style.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🧴</div>
+                    <h3 class="product-title" data-fr="Produits d'Hygiène" data-en="Hygiene Products">Produits d'Hygiène</h3>
+                    <p class="product-description" data-fr="Produits d'hygiène essentiels pour votre bien-être quotidien et votre santé." data-en="Essential hygiene products for your daily well-being and health.">Produits d'hygiène essentiels pour votre bien-être quotidien et votre santé.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">✨</div>
+                    <h3 class="product-title" data-fr="Produits Longrich" data-en="Longrich Products">Produits Longrich</h3>
+                    <p class="product-description" data-fr="Consultation et fourniture de produits Longrich de qualité sur demande spéciale." data-en="Consultation and supply of quality Longrich products upon special request.">Consultation et fourniture de produits Longrich de qualité sur demande spéciale.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">📦</div>
+                    <h3 class="product-title" data-fr="Produits Divers" data-en="Additional Products">Produits Divers</h3>
+                    <p class="product-description" data-fr="Découvrez notre sélection variée d'autres articles. Contactez-nous par email pour en savoir plus." data-en="Discover our varied selection of other items. Contact us by email to learn more.">Découvrez notre sélection variée d'autres articles. Contactez-nous par email pour en savoir plus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title" data-fr="Nos Services" data-en="Our Services">Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">🛍️</div>
+                    <h3 class="service-title" data-fr="Vente au Détail" data-en="Retail Sales">Vente au Détail</h3>
+                    <p data-fr="Service de vente professionnelle avec conseil personnalisé pour tous vos achats." data-en="Professional sales service with personalized advice for all your purchases.">Service de vente professionnelle avec conseil personnalisé pour tous vos achats.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🔍</div>
+                    <h3 class="service-title" data-fr="Sourcing Produits" data-en="Product Sourcing">Sourcing Produits</h3>
+                    <p data-fr="Recherche et approvisionnement de produits spécifiques selon vos besoins." data-en="Research and sourcing of specific products according to your needs.">Recherche et approvisionnement de produits spécifiques selon vos besoins.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🤝</div>
+                    <h3 class="service-title" data-fr="Consultation Longrich" data-en="Longrich Consultation">Consultation Longrich</h3>
+                    <p data-fr="Expertise et conseil pour les produits Longrich adaptés à vos besoins." data-en="Expertise and advice for Longrich products tailored to your needs.">Expertise et conseil pour les produits Longrich adaptés à vos besoins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-fr="Contactez-nous" data-en="Contact Us">Contactez-nous</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3 class="contact-title" data-fr="Email" data-en="Email">Email</h3>
+                    <div class="contact-details">
+                        <a href="mailto:info@hatuampya.com">info@hatuampya.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3 class="contact-title" data-fr="Numéro WhatsApp" data-en="WhatsApp Number">WhatsApp</h3>
+                    <div class="contact-details">
+                        <a href="mailto:info@hatuampya.com" data-fr="Demandez par email" data-en="Request by email">Demandez par email</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3 class="contact-title" data-fr="Localisation" data-en="Location">Localisation</h3>
+                    <div class="contact-details">
+                        <span data-fr="RD Congo, Rwanda, Ouganda" data-en="DR Congo, Rwanda, Uganda">RD Congo, Rwanda, Ouganda</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-fr="HATUA MPYA" data-en="HATUA MPYA">HATUA MPYA</h4>
+                    <p data-fr="Votre partenaire retail de confiance" data-en="Your trusted retail partner">Votre partenaire retail de confiance</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-fr="Contact" data-en="Contact">Contact</h4>
+                    <p>info@hatuampya.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-fr="Livraison" data-en="Delivery">Livraison</h4>
+                    <p data-fr="Goma, Bunia, Kampala, Kigali et environs" data-en="Goma, Bunia, Kampala, Kigali and surroundings">Goma, Bunia, Kampala, Kigali et environs</p>
+                    <p data-fr="Livraison internationale disponible" data-en="International delivery available">Livraison internationale disponible</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 20px;">
+                <p>&copy; 2025 HATUA MPYA. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentLanguage = 'fr';
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Update page content
+            document.querySelectorAll('[data-fr]').forEach(element => {
+                if (lang === 'fr') {
+                    element.textContent = element.getAttribute('data-fr');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+
+            // Update document language and title
+            document.documentElement.lang = lang;
+            if (lang === 'fr') {
+                document.title = 'HATUA MPYA - Vêtements, Chaussures, Sacs & Plus | Goma, Bunia, Kampala, Kigali et environs';
+                document.querySelector('meta[name="description"]').content = 'HATUA MPYA - Votre destination pour vêtements, chaussures, sacs, produits d\'hygiène et produits Longrich. Service professionnel en RD Congo, Rwanda et Ouganda avec livraison internationale.';
+            } else {
+                document.title = 'HATUA MPYA - Clothing, Shoes, Bags & More | Goma, Bunia, Kampala, Kigali and surroundings';
+                document.querySelector('meta[name="description"]').content = 'HATUA MPYA - Your destination for clothing, shoes, bags, hygiene products and Longrich products. Professional service in DR Congo, Rwanda, and Uganda with international delivery.';
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLanguage('fr');
+        });
+    </script>
+</body>
+</html>
